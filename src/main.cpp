@@ -5,7 +5,10 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#ifdef _WIN32
+#else
 #include <unistd.h>
+#endif
 
 int main(int argc, char** argv)
 {
@@ -23,6 +26,8 @@ int main(int argc, char** argv)
   bool enable_nhwc      = false;
   bool enable_fp16      = false;
 
+#ifdef _WIN32
+#else  
   int c;
   while ((c = getopt(argc, argv, "u:i:l:m:d:tpfh")) != -1)
   {
@@ -62,7 +67,7 @@ int main(int argc, char** argv)
         return EXIT_FAILURE;
     }
   }
-
+#endif
   // initial TensorRT
   int max_batch = 1;
   InceptionV3 net(uff_fn,
