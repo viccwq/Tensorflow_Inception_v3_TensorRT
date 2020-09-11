@@ -15,7 +15,7 @@ int main(int argc, char** argv)
   std::string uff_fn       = "inception_v3.uff";
   std::string input_layer  = "input";
   std::string output_layer = "InceptionV3/Predictions/Reshape_1";
-  std::string image_fn     = "grace_hopper.ppm";
+  std::string image_fn     = "panda.ppm";
   std::string label_fn     = "imagenet_slim_labels.txt";
   int input_channel = 3;
   int input_width   = 299;
